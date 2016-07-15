@@ -1,0 +1,43 @@
+<idea-plugin version="2">
+    <id>com.getsensibill.stylecreator</id>
+    <name>Style Generator</name>
+    <version>1.0</version>
+    <vendor email="dipendra@getsensibill.com" url="http://www.getsensibill.com">Sensibill</vendor>
+
+    <description><![CDATA[
+    A handly tool to move attributes to styles
+    ]]></description>
+
+    <change-notes><![CDATA[
+      Be sure to update ~/.config.properties for the plugin to work properly
+      sample content:
+ BASE_THEME =/Users/username/Projects/projectName/sdk/src/main/res/values/theme_styles_base.xml
+WIDGET_THEME =/Users/dipendra/Projects/projectName/sdk/src/main/res/values/widget_styles.xml
+BASE_CLASS_PREFIX=Base.Widget.XYZ.
+WIDGET_CLASS_PREFIX=Widget.XYZ.
+    ]]>
+    </change-notes>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+    <idea-version since-build="141.0"/>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <!-- uncomment to enable plugin in all products
+    <depends>com.intellij.modules.lang</depends>
+    -->
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+        <action id="toolmenu" class="com.getsensibill.stylecreator.ContextMenu" text="Migrate to Styles"
+                description="Migrates to styles">
+            <add-to-group group-id="ToolsMenu" anchor="first"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="shift meta D"/>
+        </action>
+    </actions>
+
+</idea-plugin>
